@@ -16,7 +16,7 @@ class StudentController extends Controller
     }
     public function create()
     {
-        return view('student.stupid');
+        return view('student.add');
     }
 
     public function store(Request $request)
@@ -40,7 +40,7 @@ class StudentController extends Controller
         $student->address       = $request->address;
         $student->phone_no      = $request->phone_no;
         $student->save();
-        return redirect()->back()->with('message','Data Updated Successfully!');
+        return redirect(route('manage'))->with('message','Data Updated Successfully!');
          
      }
     public function delete($id){    
